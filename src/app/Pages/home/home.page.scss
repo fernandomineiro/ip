@@ -1,0 +1,192 @@
+ion-header {
+  ion-toolbar {
+    padding-left: 16px;
+    padding-bottom: 55px;
+    border-radius: 0px 0px 50px 50px;
+    --background: var(--ion-color-yellow);
+
+    h3,
+    p {
+      color: var(--ion-color-white);
+    }
+    h3 {
+      font-family: "Fivo_sans_medium";
+    }
+    p {
+      font-family: "Fivo_sans_regular";
+      font-size: 15px;
+      margin-top: 0px;
+    }
+  }
+  ion-searchbar {
+    padding-top: 0px;
+    margin-top: -30px;
+    z-index: 10;
+  }
+}
+ion-content {
+  .info-title {
+    font-family: "Fivo_sans_medium";
+    color: var(--ion-color-blue);
+    margin-top: 10px;
+  }
+  .popular-category {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    // grid-template-rows: 1fr 1fr;
+    grid-gap: 14px 16px;
+    margin-bottom: 22px;
+    .main-section {
+      border-radius: 5px;
+      box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.16);
+      img {
+        height: 130px;
+        width: 100%;
+        border-radius: 5px 5px 0px 0px;
+      }
+      .text-section {
+        padding: 8px 0px 12px 10px;
+        p {
+          font-family: "Fivo_sans_regular";
+          color: var(--ion-color-blue);
+        }
+      }
+    }
+  }
+  .more-categories-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    // grid-template-rows: 1fr 1fr;
+    grid-gap: 16px 16px;
+    margin-bottom: 22px;
+    .main-section {
+      border-radius: 5px;
+      box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.16);
+      img {
+        height: 80px;
+        width: 100%;
+        border-radius: 5px 5px 0px 0px;
+        display: block;
+      }
+      .text-section {
+        min-height: 40px;
+        display: flex;
+        p {
+          font-size: 12px;
+          font-family: "Fivo_sans_medium";
+          color: var(--ion-color-blue);
+          margin: auto 0px;
+          line-height: 15px;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .recently-view-section,
+  .beauty-salons-section,
+  .hair-salons-section {
+    display: flex;
+    overflow-x: scroll;
+    white-space: nowrap;
+    padding-bottom: 10px;
+    .main-section {
+      width: 228px;
+      margin-right: 20px;
+      padding-bottom: 5px;
+      .image-section {
+        width: 100%;
+        height: 115px;
+        position: relative;
+        img {
+          height: 100%;
+          width: 100%;
+          display: block;
+          border-radius: 5px;
+        }
+        .fix-label {
+          position: absolute;
+          right: 0px;
+          bottom: 0px;
+          font-size: 10px;
+          font-family: "Fivo_sans_light";
+          color: var(--ion-color-white);
+          background-color: var(--ion-color-yellow);
+          padding: 8px 10px 5px;
+          text-transform: uppercase;
+          border-radius: 5px 0px 5px 0px;
+        }
+      }
+      .salon-name {
+        font-family: "Fivo_sans_medium";
+        color: var(--ion-color-blue);
+        margin-top: 7px;
+        margin-bottom: 3px;
+      }
+      .salon-address {
+        font-size: 14px;
+        font-family: "Fivo_sans_regular";
+        color: var(--ion-color-dark-blue);
+        margin: 0px;
+      }
+      .star-icon {
+        color: var(--ion-color-yellow);
+        font-size: 15px;
+        margin-bottom: -1px;
+        margin-right: 10px;
+      }
+      .everage-star-label,
+      .total-rating-label {
+        font-size: 14px;
+        font-family: "Fivo_sans_medium";
+      }
+      .everage-star-label {
+        color: var(--ion-color-blue);
+      }
+      .total-rating-label {
+        color: var(--ion-color-dark-blue);
+      }
+      .circle {
+        height: 5px;
+        width: 5px;
+        background-color: var(--ion-color-yellow);
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 20px;
+        margin-bottom: 2px;
+      }
+    }
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  .featured-venues-section {
+    padding-bottom: 5px;
+    img {
+      display: block;
+      width: 100%;
+      height: 159px;
+      border-radius: 5px 5px 0px 0px;
+    }
+    .salon-name {
+      font-family: "Fivo_sans_medium";
+      color: var(--ion-color-blue);
+      margin-top: 8px;
+      margin-bottom: 3px;
+    }
+    .salon-address {
+      font-size: 14px;
+      font-family: "Fivo_sans_regular";
+      color: var(--ion-color-dark-blue);
+      margin-top: 0px;
+      margin-bottom: 5px;
+    }
+  }
+}
+.featured_venue {
+  display: -webkit-box;
+  overflow-x: auto;
+  .featured-venues-section {
+    margin-right: 15px;
+  }
+}

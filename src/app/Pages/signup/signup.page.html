@@ -1,0 +1,53 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start" class="ion-no-margin">
+      <ion-back-button defaultHref="tabs/home" icon="chevron-back" mode="md" class="btn-back"></ion-back-button>
+    </ion-buttons>
+    <ion-title header-title>Registe para continuar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding-horizontal">
+  <form action="" #f="ngForm">
+    <p input-label>Nome Completo</p>
+    <ion-input custom-input type="text" placeholder="Nome Completo" [(ngModel)]="data.name" name="name" required></ion-input>
+    <p class="err" *ngIf="err?.name">{{err?.name}}*</p>
+    <p input-label>Telefone de Contato</p>
+    <div class="custom-phone-input">
+      <!-- <ion-select appNoArrow value="+91" [interfaceOptions]="customOptions">
+        <ion-select-option value="+44" selected>+44</ion-select-option>
+        <ion-select-option value="+91">+91</ion-select-option>
+        <ion-select-option value="+92">+92</ion-select-option>
+      </ion-select> -->
+      <ion-input custom-input type="tel" placeholder="Phone" [(ngModel)]="data.phone_no" name="phone" required>
+      </ion-input>
+    </div>
+    <p class="err" *ngIf="err?.phone_no">{{err?.phone_no}}*</p>
+
+    <p input-label>Email</p>
+    <ion-input custom-input type="email" placeholder="Email" [(ngModel)]="data.email" name="email" required></ion-input>
+    <p class="err" *ngIf="err?.email">{{err?.email}}*</p>
+
+    <p input-label>Senha</p>
+    <ion-input custom-input [type]="showpassword ? 'text' : 'password'" placeholder="Senha" name="password"
+      [(ngModel)]="data.password" required>
+
+      <ion-button class="btn-password-toggle ion-no-margin" fill="clear" (click)="showpassword = !showpassword">
+        <ion-icon slot="icon-only" [name]="showpassword ? 'eye-off' : 'eye'"></ion-icon>
+      </ion-button>
+    </ion-input>
+    <p class="err" *ngIf="err?.password">{{err?.password}}*</p>
+
+    <!-- <div class="styled-input-single">
+      <input type="checkbox" name="agree_terms" id="agree_terms" />
+      <label for="agree_terms">I agree to the privacy policy, website
+        terms and booking terms</label>
+    </div> -->
+
+    <ion-button expand="block" class="ion-no-margin btn-general" (click)="doSignUp()" [disabled]="!f.valid">
+      Registrar
+    </ion-button>
+  </form>
+  <p class="accont-label ion-text-center">Você já tem alguma conta?</p>
+  <a class="ion-text-center btn-signin" (click)="doSignIn()">Entrar Agora</a>
+</ion-content>

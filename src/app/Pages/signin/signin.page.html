@@ -1,0 +1,34 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <!-- <ion-buttons slot="start" class="ion-no-margin">
+      <ion-back-button defaultHref="tabs/home" icon="chevron-back" mode="md" class="btn-back"></ion-back-button>
+    </ion-buttons> -->
+            <img src="../../../assets/Images/euamolambari.png" class="img">
+     <p class="title">Bem vindo ao APP</p>
+   
+  </ion-toolbar>
+  
+</ion-header>
+ 
+<ion-content class="ion-padding-horizontal">
+  <form action="" #f="ngForm">
+    <p input-label>Email</p>
+    <ion-input custom-input type="email" placeholder="Email" [(ngModel)]="data.email" name="email" required></ion-input>
+    <p class="err" *ngIf="err?.email">{{err?.email}}*</p>
+    <p input-label>Senha</p>
+    <ion-input custom-input [type]="showpassword ? 'text' : 'password'" placeholder="Senha"
+      [(ngModel)]="data.password" name="password" required>
+      <ion-button class="btn-password-toggle ion-no-margin" fill="clear" (click)="showpassword = !showpassword">
+        <ion-icon slot="icon-only" [name]="showpassword ? 'eye-off' : 'eye'"></ion-icon>
+      </ion-button>
+    </ion-input>
+    <p class="err" *ngIf="err?.password">{{err?.password}}*</p>
+    <a class="ion-float-right btn-forgot" (click)="doForgot()">Perdeu a Senha?</a>
+
+    <ion-button expand="block" class="ion-no-margin btn-general" (click)="doSignIn()" [disabled]="!f.valid">
+      Entrar
+    </ion-button>
+  </form>
+  <p class="accont-label ion-text-center">Você ainda não tem uma conta?</p>
+  <a class="ion-text-center btn-signin" (click)="doSignUp()">Criar Agora</a>
+</ion-content>
